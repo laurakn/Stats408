@@ -48,8 +48,8 @@ qplot(x=seq(n), y=sort(x))
 set.seed(1)
 s <- m
 y <- rbinom(n, s, p) # n=10, so we're generating 10 trials of size=10
-qplot(x=seq(n), y=y)
-qplot(x=seq(n), y=sort(y))
+qplot(x=seq(m), y=y)
+qplot(x=seq(m), y=sort(y))
 
 df <- data.frame(id=seq(n), sort(x), sort(y))
 df.m <- melt(df, 'id')
@@ -74,9 +74,9 @@ s=23
 n=50 
 p=14/79
 set.seed(1)
-data <- rbinom(n, s, p)/174 
+data <- rbinom(n, s, p)/23 
 hist(data, freq=FALSE) 
-hist(data, freq=FALSE, main="Histogram of Adverse Reactions", xlab="Proportion Adverse Reaction",
+hist(data, freq=FALSE, main="Histogram of Successes", xlab="Proportion of Success",
      col="green") 
 # Does this graph make sense?
 # Does it make sense to say "the proportion of successes is near .05?"
